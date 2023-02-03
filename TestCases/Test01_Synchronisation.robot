@@ -12,7 +12,17 @@ ${vGender}    F
 
 *** Test Cases ***
 Test synchronisation
+    ${Attente}=    Get Selenium Timeout
+    Log To Console     ${Attente}
+    Set Selenium Timeout    10
+    ${Attente}=    Get Selenium Timeout
+    Log To Console     ${Attente}
+    #Set Selenium Speed    2
+    
+    #Set Selenium Implicit Wait    20
     When Selectionner un Gender    ${vGender}
+    #Sleep    60
+    Wait Until Element Is Visible    id:FirstName
     And Saisir first name 
     And Saisir last name  
     And Saisir email
@@ -32,7 +42,7 @@ Selectionner un Gender
     Select Radio Button    Gender   ${Genre}
 Saisir first name
     Clear Element Text    id:FirstName
-    Input Text    id:FirstName    farid2
+    Input Text    id:FirstName   farid2
 Saisir last name 
     Clear Element Text    id:LastName
     Input Text    id:LastName    Zouhairi3
