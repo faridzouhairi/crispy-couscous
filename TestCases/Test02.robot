@@ -33,8 +33,9 @@ Switcher vers une autre fenetre
     Sleep    2s
 Reserver sur une demo gratuite
     Click Button    xpath://*[@id="navbarSupportedContent"]/div[2]/ul/li[1]/a/button
-    Input Text    xpath://div[3]/div/div/section[2]/div/div[2]/div/div/div/form/fieldset/div[1]/div/input//div[1]    farid
+    Input Text    name:FullName    farid
     Input Text    name:Email    farid@gmail.com
     Input Text    css:#Form_getForm_Contact    514432223
+    Click Element    xpath://*[@id="Form_getForm_Country"]/option[10]
     Click Element    id:Form_getForm_action_submitForm
-    
+    #Switch Window    ${ListWindows}[0]
